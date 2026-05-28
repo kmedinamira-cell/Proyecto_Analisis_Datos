@@ -1,2 +1,3 @@
 env/
 *.xlsx
+etl/Bases_datos/saldo_captaciones_limpio.csv
