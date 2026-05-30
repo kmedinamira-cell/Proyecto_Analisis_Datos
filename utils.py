@@ -36,37 +36,33 @@ def generarMenu():
         # Creamos dos columnas
         col_1, col_2 = st.columns(spec=2)
         with col_1:
-            logo = Image.open(PATH + "media/logo_page.png")
+            logo = Image.open(PATH + "media/Logo.png")
             st.image(image=logo,
-                    width=80)            
+                    width=110)            
         with col_2:
-            st.title("SMEC")
+            st.title("Centro de Análisis Crediticio")
 
         st.page_link(
             page="app.py", 
-            label="Inicio",
-            icon="🏠")
+            label="Introducción",
+            icon="🔍")
         st.page_link(
             page="pages/pronostico.py",
-            label="Pronóstico",
-            icon="💚"
+            label="Análisis Estadístico",
+            icon="📊"
         ) 
-        st.page_link(
-            page="pages/arboles.py",
-            label="Árboles",
-            icon="🌳"
-        ) 
+     
         st.page_link(
             page="pages/graficos.py",
-            label="Gráficos",
-            icon="📊"
+            label="Hallazgos y Conclusiones",
+            icon="🎯"
         ) 
 
 # Función para cargar los datos
 # Decorador para memoria cache
 @st.cache_data
 def cargar_datos():
-    ruta = PATH + "data/datos_pacientes.csv"
+    ruta = PATH + "Base_datos/data_saldo_captaciones_final.csv"
     df = pd.read_csv(ruta, encoding="utf-8", sep=",", index_col=0)
     return df
 
